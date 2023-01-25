@@ -25,7 +25,7 @@ if(!empty($_POST))
 			$query = mysqli_query($conection, "SELECT * FROM cliente
 												    WHERE (nit = '$nit' AND idcliente != $idCliente)");
 			$result = mysqli_fetch_array($query);
-			$result = count($result);
+			//$result = count($result);
 			print_r($query); exit;
 		}
 		
@@ -45,6 +45,7 @@ if(!empty($_POST))
 				
 			if($sql_update){
 				$alert ='<p class="msg_save">Cliente actualizado correctamente.</p>';
+				header("location: ./lista_clientes.php");
 			}else{
 				$alert ='<p class="msg_error">Error al actualizar el cliente.</p>';
 			}

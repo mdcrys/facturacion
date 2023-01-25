@@ -42,6 +42,7 @@ if(!empty($_POST))
 														VALUES ('$nit','$nombre','$telefono','$direccion','$usuario_id','now(dateadd)')");
 			if($query_insert){
 				$alert ='<p class="msg_save">Cliente creado correctamente.</p>';
+				header("location: ./lista_clientes.php");
 			}else{
 				$alert ='<p class="msg_error">Error al crear el Cliente.</p>';
 			}
@@ -68,7 +69,7 @@ if(!empty($_POST))
 	<?php include "includes/header.php"?>
 	<section id="container">
 		<div class="form_register">
-			<h1>Resgistro Usurio</h1>
+			<h1>Resgistro Cliente</h1>
 			<hr>
 			<div class="alert"><?php echo isset($alert) ?$alert : ''; ?></div>
 			<form action="" method="post">

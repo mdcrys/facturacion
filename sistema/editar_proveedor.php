@@ -39,6 +39,7 @@ if(!empty($_POST))
 			
 			if($sql_update){
 				$alert ='<p class="msg_save">Proveedor actualizado correctamente.</p>';
+				header("location: ./lista_proveedor.php");
 			}else{
 				$alert ='<p class="msg_error">Error al actualizar el Proveedor.</p>';
 			}

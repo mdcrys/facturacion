@@ -3,8 +3,8 @@
 	
 	$host='localhost';
 	$user='root';
-	$password='admin';
-	$db='facturacion';
+	$password='';
+	$db='tienda';
 	
 	$conection = @mysqli_connect($host,$user,$password,$db);
 

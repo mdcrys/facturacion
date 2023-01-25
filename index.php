@@ -25,7 +25,7 @@ if(!empty($_SESSION['active'] ))
 											  WHERE u.usuario='$user' and u.clave='$pass'");// consulta a la base de datos
 			mysqli_close($conection);
 			$result = mysqli_num_rows($query);//esto nos devuelve un numero
-			
+			print_r($result);
 			if($result > 0)
 			{
 				$data = mysqli_fetch_array($query);
@@ -52,14 +52,14 @@ if(!empty($_SESSION['active'] ))
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Login | Sistema facturacion</title>
-	<link rel="stylesheet" type="text/css" href="css/styles.css"
+	<title>Tienda Online</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 <section id="container">
 	<form action="" method="post">
 	<h3>Iniciar Sesion</h3>
-	<img src="img/icono.png" alt="Login" width="200" height="200">
+	<img src="img/candado.png" alt="Login" width="200" height="200">
 	<input type="text" name="usuario" placeholder="Usuario">
 	<input type="password" name="clave" placeholder="Contraseña">
 	<div class="alert"><?php echo isset($alert) ? $alert : '';?></div>

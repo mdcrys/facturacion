@@ -9,7 +9,7 @@ if(empty($_SESSION['active'] ))
 	<header>
 		<div class="header">
 			
-			<h1>Sistema Facturación</h1>
+			<h1>Tienda</h1>
 			<div class="optionsBar">
 				<p>Ecuador, <?php echo fechaC()?></p>
 				<span>|</span>

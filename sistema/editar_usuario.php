@@ -28,7 +28,6 @@ if(!empty($_POST))
 												    OR (correo ='$email' AND idusuario != $idUsuario)");
 
 		$result = mysqli_fetch_array($query);
-		$result = count($result);
 
 		if($result >0){
 			$alert ='<p class="msg_error">El correo o el usuario ya existe.</p>';
@@ -46,6 +45,7 @@ if(!empty($_POST))
 				}
 			if($sql_update){
 				$alert ='<p class="msg_save">Usuario actualizado correctamente.</p>';
+				header("location: ./lista_usuarios.php");
 			}else{
 				$alert ='<p class="msg_error">Error al actualizar el usuario.</p>';
 			}
@@ -119,7 +119,7 @@ if($result_sql == 0)
 				<label for="usuario">Usuario</label>
 				<input type="text" name="usuario" id="usuario" placeholder="Usuario" value="<?php echo $usuario;?>">
 				<label for="clave">Clave</label>
-				<input type="password" name="clave" id="clave" placeholder="clave de acceso">	
+				<input type="password" name="clave" id="clave" placeholder="clave de acceso" disabled="disabled">	
 				<label for="rol">Tipo de Usuario</label>
 				<?php
 					include "../conexion.php";

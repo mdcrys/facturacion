@@ -38,6 +38,7 @@ if(!empty($_POST))
 														VALUES ('$proveedor','$contacto','$telefono','$direccion','$usuario_id')");//,'now(dateadd)
 			if($query_insert){
 				$alert ='<p class="msg_save">Proveedor creado correctamente.</p>';
+				header("location: ./lista_proveedor.php");
 			}else{
 				$alert ='<p class="msg_error">Error al crear el Proveedor.</p>';
 			}

@@ -29,7 +29,7 @@ if(!empty($_POST))
 		//echo"SELECT * FROM usuario WHERE usuario = '$user' OR correo ='$email'";
 
 		$query = mysqli_query($conection, "SELECT * FROM usuario WHERE usuario = '$user' OR correo ='$email'");
-		mysqli_close($conection);
+		//mysqli_close($conection);
 		$result = mysqli_fetch_array($query);
 
 
@@ -41,6 +41,7 @@ if(!empty($_POST))
 														VALUES ('$nombre','$email','$user','$clave','$rol')");
 			if($query_insert){
 				$alert ='<p class="msg_save">Usuario creado correctamente.</p>';
+				header("location: ./lista_usuarios.php");
 			}else{
 				$alert ='<p class="msg_error">Error al crear el usuario.</p>';
 			}
@@ -61,7 +62,7 @@ if(!empty($_POST))
 	<?php include "includes/header.php"?>
 	<section id="container">
 		<div class="form_register">
-			<h1><i class="fas fa-user"></i> Resgistro Usurio</h1>
+			<h1><i class="fas fa-user"></i> Resgistro Usuario</h1>
 			<hr>
 			<div class="alert"><?php echo isset($alert) ?$alert : ''; ?></div>
 			<form action="" method="post">
